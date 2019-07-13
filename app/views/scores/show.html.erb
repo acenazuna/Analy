@@ -9,11 +9,22 @@
   <strong>Key:</strong>
   <%= @score.key %>
 </p>
-
-<p>
+<div>
   <strong>Chord:</strong>
   <%= simple_format(@score.chord) %>
-</p>
 
-<%= link_to 'Edit', edit_score_path(@score) %> |
-<%= link_to 'Back', scores_path %>
+  <%= link_to 'Edit', edit_score_path(@score) %> |
+  <%= link_to 'Back', scores_path %>
+
+</div>
+<div>
+  <strong>Degree:</strong>
+
+  <%= simple_format(@score.chord)
+      hash = {'C'=>'I','Dm'=>'IIm','Em'=>'IIIm','F'=>'IV','G'=>'V','Am'=>'VIm','Bm-5'=>'VIIm-5',}
+      @score.chord.gsub(/C|Dm|Em|F|G|Am|Bm-5/,hash)
+
+  %>
+
+
+</div>
