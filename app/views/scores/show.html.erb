@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tittle:</strong>
+  <%= @score.tittle %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @score.key %>
+</p>
+
+<p>
+  <strong>Chord:</strong>
+  <%= simple_format(@score.chord) %>
+</p>
+
+<%= link_to 'Edit', edit_score_path(@score) %> |
+<%= link_to 'Back', scores_path %>

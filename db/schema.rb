@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_13_073237) do
+ActiveRecord::Schema.define(version: 2019_07_13_164815) do
+
+  create_table "chords", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "scores", force: :cascade do |t|
+    t.string "tittle"
+    t.string "key"
+    t.text "chord"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
