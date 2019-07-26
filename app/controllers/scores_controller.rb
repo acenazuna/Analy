@@ -4,12 +4,15 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.all
+  # .order(id:"DESC")で最新の投稿を上に表示させる
+    @scores = Score.all.order(id: "DESC")
+    @user = current_user
   end
 
   # GET /scores/1
   # GET /scores/1.json
   def show
+    @score = Score.find(params[:id])
   end
 
   # GET /scores/new

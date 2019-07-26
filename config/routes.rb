@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :scores
+  resources :users, :only => [:index, :show]
+
+  resources :scores  
   root 'top#index'
 end

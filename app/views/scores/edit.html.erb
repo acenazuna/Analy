@@ -1,6 +1,15 @@
+<%= render 'layouts/header' %>
+<div class="container">
+  <div class="row">
+  <div class="col-md-12">
+
 <h1>Editing Score</h1>
 
 <%= render 'form', score: @score %>
 
-<%= link_to 'Show', @score %> |
-<%= link_to 'Back', scores_path %>
+<%= link_to 'Show', @score, class: 'btn btn-default' %>
+<%= link_to 'Back', scores_path, class: 'btn btn-default' %>
+
+</div>
+</div>
+</div>

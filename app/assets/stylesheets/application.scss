@@ -13,7 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
-div{
-  float: left;
-}
+
+ .jumbotron h1,
+ .jumbotron .h1 {
+   color: white;
+ }
+ .jumbotron p {
+   color: white;
+ }
+ .jumbotron { background:url(main.jpg) center no-repeat; background-size: cover;}
