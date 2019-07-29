@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, :only => [:index, :show]
+  resources :users
 
-  resources :scores  
+  resources :scores
   root 'top#index'
+  get "about/index" => "about#index"
 end

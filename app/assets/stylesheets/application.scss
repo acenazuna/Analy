@@ -17,11 +17,33 @@
  @import "bootstrap";
 
 
+body {
+   padding-top: 70px;
+ }
+header-under{
+  height: 70px;
+  width: 100%;
+
+ }
+
  .jumbotron h1,
  .jumbotron .h1 {
-   color: white;
+   color: #FFF;
+ }
+ .jumbotron h2,
+ .jumbotron .h2 {
+   color: #FFF;
  }
  .jumbotron p {
-   color: white;
+   color: #FFF;
  }
- .jumbotron { background:url(main.jpg) center no-repeat; background-size: cover;}
+ .jumbotron {
+   background:url(main.jpg) center no-repeat;
+   background-size: cover;
+   height: 100vh;
+
+ }
+
+ navbar-center{
+   margin-left: auto;
+ }
