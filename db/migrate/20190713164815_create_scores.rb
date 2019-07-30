@@ -6,6 +6,8 @@ class CreateScores < ActiveRecord::Migration[5.2]
       t.text :chord
 
       t.timestamps
+      add_column :scores, :user_id, :integer
+
     end
   end
 end

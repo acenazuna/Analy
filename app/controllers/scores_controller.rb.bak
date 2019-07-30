@@ -1,5 +1,4 @@
 class ScoresController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_score, only: [:show, :edit, :update, :destroy]
 
   # GET /scores
@@ -7,36 +6,28 @@ class ScoresController < ApplicationController
   def index
   # .order(id:"DESC")で最新の投稿を上に表示させる
     @scores = Score.all.order(id: "DESC")
-    @user = User.find_by(params[:id])
+    @user = current_user
   end
 
   # GET /scores/1
   # GET /scores/1.json
   def show
     @score = Score.find(params[:id])
-    @user = User.find_by(id: @score.user_id)
   end
 
   # GET /scores/new
   def new
     @score = Score.new
-
   end
 
   # GET /scores/1/edit
   def edit
-
   end
 
   # POST /scores
   # POST /scores.json
   def create
     @score = Score.new(score_params)
-    @score.user = current_user
-    user = User.find_by_id(params[:id])
-
-    @current_user ||= User.find_by(id: session[:user_id])
-
 
     respond_to do |format|
       if @score.save

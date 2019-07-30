@@ -7,23 +7,20 @@
 <p id="notice"><%= notice %></p>
 
 <h2>
-  <%= @score.tittle %>
+  <%= @score.tittle %> - <%= @score.user.name %>
 </h2>
 
-<p>
-  <strong>Key:</strong>
-  <%= @score.key %>
-</p>
-<div>
-  <strong>Chord:</strong>
-  <%= simple_format(@score.chord) %>
+<h3>
+  Key = <%= @score.key %>
+</h3>
 
-  <%= link_to 'Edit', edit_score_path(@score) %> |
-  <%= link_to 'Back', scores_path %>
-
+<div class="col-md-6">
+  <h3>Chord</h3>
+      <%= simple_format(@score.chord) %>
 </div>
-<div>
-  <strong>Degree:</strong>
+
+<div class="col-md-6">
+  <h3>Degree</h3>
 
    <!-- ifで12x2メジャーマイナーキーの分岐,ディグリーに変換
         現在　メジャーダイアトニックのみ対応
@@ -55,7 +52,7 @@
   <% elsif @score.key == "E" %>
   <%= @score.chord
       hash = {'E'=>'I','F#'=>'II','G#'=>'III','A'=>'IV','B'=>'V','C#'=>'VI','D#'=>'VII',}
-      simple_format(@score.chord.gsub(/C|C#|Db|D|D#|Eb|E|F|F#|Gb|G|G#|Ab|A|A#|Bb|B|/,hash))
+      simple_format(@score.chord.gsub(/C|C#|Db|D|D#|Eb|E|F#|Gb|G|G#|Ab|A|A#|Bb|B|/,hash))
   %>
   <% elsif @score.key == "F" %>
   <%= @score.chord
@@ -94,14 +91,17 @@
       simple_format(@score.chord.gsub(/C|C#|Db|D|D#|Eb|E|F|F#|Gb|G|G#|Ab|A|A#|Bb|B|/,hash))
   %>
 
-
   <% else %>
   <p>未実装</p>
-
-
-
-
   <% end %>
+</div>
+
+<div>
+  <% if @score.user == current_user %>
+  <%= link_to 'Edit', edit_score_path(@score),class: 'btn btn-info' %>
+  <%= link_to 'Destroy', score_path(@score), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <% end %>
+  <%= link_to 'Back', scores_path, class: 'btn btn-default' %>
 
 </div>
 
