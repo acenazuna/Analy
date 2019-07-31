@@ -77,8 +77,8 @@
   %>
   <% elsif @score.key == "A" %>
   <%= @score.chord
-      hash = {'A'=>'I','B'=>'II','C#'=>'III','D'=>'IV','E'=>'V','F#'=>'VI','G#'=>'VII',}
-      simple_format(@score.chord.gsub(/C|C#|Db|D|D#|Eb|E|F|F#|Gb|G|G#|Ab|A|A#|Bb|B|/,hash))
+      hash = {'A'=>'I','A#'=>'#I','B'=>'II','C#'=>'III','D'=>'IV','E'=>'V','F#'=>'VI','G#'=>'VII',}
+      simple_format(@score.chord.gsub(/C#|Db|D|D#|Eb|E|F#|Gb|G|G#|Ab|A|A#|Bb|B|/,hash))
   %>
   <% elsif @score.key == "A#/Bb" %>
   <%= @score.chord
@@ -87,8 +87,8 @@
   %>
   <% elsif @score.key == "B" %>
   <%= @score.chord
-      hash = {'B'=>'I','C#'=>'II','D#'=>'III','E'=>'IV','F#'=>'V','G#'=>'VI','#'=>'VII',}
-      simple_format(@score.chord.gsub(/C|C#|Db|D|D#|Eb|E|F|F#|Gb|G|G#|Ab|A|A#|Bb|B|/,hash))
+      hash = {'B'=>'I','C#'=>'II','D#'=>'III','E'=>'IV','F#'=>'V','G#'=>'VI','A#'=>'VII',}
+      simple_format(@score.chord.gsub(/C#|Db|D#|Eb|E|F#|Gb|G#|Ab|A#|Bb|B|/,hash))
   %>
 
   <% else %>

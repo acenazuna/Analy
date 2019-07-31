@@ -7,7 +7,7 @@
   <div class="col-md-12">
 
 
-<h1>Scores</h1>
+<h1>スコア一覧</h1>
 <div class="">
   <% if user_signed_in? %>
   <%= link_to 'New Score', new_score_path, class: 'btn btn-default' %>
@@ -27,7 +27,7 @@
   <tbody>
     <% @scores.each do |score| %>
       <tr>
-        <div class="box">
+        <div class="box" style="margin:15px 0px 15px 0px;">
         <td><%= score.tittle %></td>
         <td><%= score.user.name %></td>
         <td><%= link_to 'Show', score, class: 'btn btn-default' %></td>        </div>
