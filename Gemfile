@@ -68,5 +68,5 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
