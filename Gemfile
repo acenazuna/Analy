@@ -71,3 +71,14 @@ gem "omniauth-rails_csrf_protection"
 
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
+
+group :development, :test do
+ gem 'capistrano'
+ gem 'capistrano-bundler'
+ gem 'capistrano-rails'
+ gem 'capistrano-rbenv'
+end
+
+group :production, :staging do
+  gem 'unicorn'
+end
